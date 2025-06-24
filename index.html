@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cartas Aleatórias</title>
+  <title>Cartas Aleatórias/Educação Ambiental</title>
   <style>
     * {
       margin: 0;
       padding: 0;
     }
+    h1{
+      font-size: 100px;
+      color: white;
+      text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      3px 1px 0 black;
+      font-weight: bold;
+    }
+    body{
+      height: 100vh;
+      text-align: center;
+      background: url("water-59.gif") center center;
+      background-size: cover;
+    }
     .contenedor {
       display: flex;
       justify-content: center;
-      gap: 100px;
+      gap: 80px;
       flex-wrap: wrap;
-      margin-top: 50px;
+      margin-top: 20px;
     }
     .card {
       width: 200px;
@@ -24,7 +40,6 @@
       cursor: pointer;
     }
     .inner {
-      border: 4px solid black;
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
@@ -35,6 +50,7 @@
       transform: rotateY(180deg);
     }
     .face {
+      border: 3px solid black;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -45,136 +61,116 @@
       backface-visibility: hidden;
     }
     .front {
-      background-color: #444;
-      color: white;
+      background-image: url("img14.png");
+      border-radius: 15px;
     }
     .back {
+      border-radius: 15px;
       transform: rotateY(180deg);
-      background-color: black;
     }
     img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: cover;
+      height: auto;
+      width: auto;
+    }
+
+    .color {
+      border:5px solid rgb(30, 255, 0);
     }
   </style>
 </head>
 <body>
+  <h1>Jogo da memoria</h1>
 
 <div class="contenedor">
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
-      <div class="face back">
-        <img src="" alt="Imagen 1" />
-      </div>
+      <div class="face front"></div>
+      <div class="face back"><img src="" alt="Imagen 1" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
   </div>
   <div class="card principal" onclick="llamarAnim(this)">
     <div class="inner">
-      <div class="face front">Frontal</div>
+      <div class="face front"></div>
       <div class="face back"><img src="" alt="Imagen" /></div>
     </div>
+  </div>
+<div class="card principal" onclick="llamarAnim(this)">
+  <div class="inner">
+    <div class="face front"></div>
+    <div class="face back"><img src="" alt="Imagen" /></div>
   </div>
 </div>
+<div class="card principal" onclick="llamarAnim(this)">
+  <div class="inner">
+    <div class="face front"></div>
+    <div class="face back"><img src="" alt="Imagen" /></div>
+  </div>
+</div>
+<div class="card principal" onclick="llamarAnim(this)">
+  <div class="inner">
+    <div class="face front"></div>
+    <div class="face back"><img src="" alt="Imagen" /></div>
+  </div>
+</div>
+<div class="card principal" onclick="llamarAnim(this)">
+  <div class="inner">
+    <div class="face front"></div>
+    <div class="face back"><img src="" alt="Imagen" /></div>
+  </div>
+</div>
+</div>
 
-<script>
-  // Inicializa el juego: asigna imágenes aleatorias
-  function inicio() {
-    const cartas = document.querySelectorAll("img");
-    const baseImages = [
-      "img1.jpg", "img2.png", "img3.jpg", "img4.png", "images.jpg"
-    ];
-    const images = [...baseImages, ...baseImages]; // duplicar para hacer pares
-    const mezcladas = images.sort(() => Math.random() - 0.5);
+<script src="script.js"></script>
 
-    cartas.forEach((img, i) => {
-      img.src = mezcladas[i];
-    });
-  }
-
-  function nose() {
-  const flipadasCards = Array.from(document.querySelectorAll(".card.flipped:not(.matched)"));
-
-  if (flipadasCards.length === 2) {
-    const imgs = flipadasCards.map(carta =>
-      carta.querySelector(".back img")
-    );
-
-    if (imgs[0].src === imgs[1].src) {
-
-      flipadasCards.forEach(carta => carta.classList.add("matched"));
-    
-    } else {
-      
-      setTimeout(() => {
-        flipadasCards.forEach(carta => carta.classList.remove("flipped"));
-      }, 1000);
-
-    }
-  }
-}
-
-function llamarAnim(carta) {
-
-  if (carta.classList.contains("flipped") || carta.classList.contains("matched")) return;
-
-  const flipadasActivas = document.querySelectorAll(".card.flipped:not(.matched)");
-  if (flipadasActivas.length >= 2) return;
-
-  carta.classList.add("flipped");
-  nose();
-}
-
-inicio();
-</script>
 </body>
 </html>
