@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartas Aleatórias</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+    .card {
+      width: 200px;
+      height: 300px;
+      margin: 20px auto;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .inner {
+      border: 4px solid black;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: 0.6s;
+      position: relative;
+    }
+    .card.flipped .inner {
+      transform: rotateY(180deg);
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      backface-visibility: hidden;
+    }
+    .front {
+      background-color: #444;
+      color: white;
+    }
+    .back {
+      transform: rotateY(180deg);
+      background-color: black;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back">
+        <img src="" alt="Imagen 1" />
+      </div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+  <div class="card principal" onclick="llamarAnim(this)">
+    <div class="inner">
+      <div class="face front">Frontal</div>
+      <div class="face back"><img src="" alt="Imagen" /></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Inicializa el juego: asigna imágenes aleatorias
+  function inicio() {
+    const cartas = document.querySelectorAll("img");
+    const baseImages = [
+      "img1.jpg", "img2.png", "img3.jpg", "img4.png", "images.jpg"
+    ];
+    const images = [...baseImages, ...baseImages]; // duplicar para hacer pares
+    const mezcladas = images.sort(() => Math.random() - 0.5);
+
+    cartas.forEach((img, i) => {
+      img.src = mezcladas[i];
+    });
+  }
+
+  function nose() {
+  const flipadasCards = Array.from(document.querySelectorAll(".card.flipped:not(.matched)"));
+
+  if (flipadasCards.length === 2) {
+    const imgs = flipadasCards.map(carta =>
+      carta.querySelector(".back img")
+    );
+
+    if (imgs[0].src === imgs[1].src) {
+
+      flipadasCards.forEach(carta => carta.classList.add("matched"));
+    
+    } else {
+      
+      setTimeout(() => {
+        flipadasCards.forEach(carta => carta.classList.remove("flipped"));
+      }, 1000);
+
+    }
+  }
+}
+
+function llamarAnim(carta) {
+
+  if (carta.classList.contains("flipped") || carta.classList.contains("matched")) return;
+
+  const flipadasActivas = document.querySelectorAll(".card.flipped:not(.matched)");
+  if (flipadasActivas.length >= 2) return;
+
+  carta.classList.add("flipped");
+  nose();
+}
+
+inicio();
+</script>
+</body>
+</html>
