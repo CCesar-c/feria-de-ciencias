@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  h1{
+    font-size: 100px;
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    3px 1px 0 black;
+    font-weight: bold;
+  }
+  body{
+    height: 100vh;
+    text-align: center;
+    background: url("water-59.gif") repeat center center;
+    background-size: cover;
+  }
+  .contenedor {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 120px;
+    height: 120px;
+    margin: 2px ;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.6s;
+    position: relative;
+  }
+  .card.flipped .inner {
+    transform: rotateY(180deg);
+  }
+  .face {
+    border: 3px solid black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    backface-visibility: hidden;
+  }
+  .front {
+    background-image: url("img14.png");
+    border-radius: 15px;
+  }
+  .back {
+    border-radius: 15px;
+    transform: rotateY(180deg);
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+  }
+
+  .color {
+    border:5px solid rgb(30, 255, 0);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
