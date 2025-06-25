@@ -1,13 +1,37 @@
-  document.addEventListener("click", () => {
-  // ponerle color
-  let nose = document.querySelectorAll(".matched").forEach(elemento =>
-  {
-    let valor = elemento.querySelector(".face.back")
-    if (valor != null) {
-      valor.classList.add("color");
-    }
-  });
+
+  var timing = 0;
+  
+  var contador = document.getElementById("contador")
+  
+  var comenzar = Boolean();
+  
+  var comenzar = document.getElementById("bton").addEventListener("click", () =>{
+    comenzar = true
   })
+
+  document.addEventListener("click", () => {
+    // ponerle color
+    let nose = Array.from(document.querySelectorAll(".matched"))
+    
+    if (nose.length >= 14) {
+      comenzar = false;
+    }
+    nose.forEach(elemento =>{
+      let valor = elemento.querySelector(".face.back")
+      if (valor != null) {
+        valor.classList.add("color");
+      }
+    });
+
+  })
+
+  setInterval(() => {
+    if (comenzar) {
+      timing += 1;
+      contador.innerText = "Tempo: " + timing;
+    }
+  }, 1000);
+
   function inicio() {
     const cartas = document.querySelectorAll("img");
     const baseImages = ["img1.png","img2.png","img3.png","img4.png",
