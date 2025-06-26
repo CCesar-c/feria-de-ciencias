@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
   }
-  h1{
+  button{
+    padding: 20px;
+  }
+  .unable{
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .titulo{
     font-size: 100px;
     color: white;
     text-shadow:
@@ -19,10 +26,10 @@
     background-size: cover;
   }
   .contenedor {
-    margin: 100px;
+    margin: 25px 100px;
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 15px;
     flex-wrap: wrap;
   }
   .card {
@@ -30,7 +37,7 @@
     height: 120px;
     margin: 2px ;
     perspective: 1000px;
-    cursor: pointer;
+    
   }
   .inner {
     width: 100%;
@@ -54,16 +61,27 @@
     backface-visibility: hidden;
   }
   .front {
-    background-image: url("img14.png");
+    background-image: url("download.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white; 
     border-radius: 15px;
   }
   .back {
+    background-image: url('data:image/svg+xml;utf8,<svg ...>');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    background-color: #ffffff;
     border-radius: 15px;
     transform: rotateY(180deg);
   }
   img {
     max-width: 100%;
     max-height: 100%;
+    filter: drop-shadow(2px 2px 4px #000);
+    border-radius: 10px;
     height: auto;
     width: auto;
   }
