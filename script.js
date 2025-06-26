@@ -1,4 +1,3 @@
-
   var timing = 0;
   
   var contador = document.getElementById("contador")
@@ -6,6 +5,9 @@
   var comenzar = Boolean();
   
   var comenzar = document.getElementById("bton").addEventListener("click", () =>{
+    setTimeout(() => {
+      document.querySelector(".unable").classList.remove("unable")
+    }, 1000);
     comenzar = true
   })
 
