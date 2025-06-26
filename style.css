@@ -1,13 +1,25 @@
 * {
+    font-family:  Geneva, sans-serif;
     margin: 0;
     padding: 0;
   }
   button{
-    padding: 20px;
+    padding: 20px 50px;
+    border-radius: 20px;
+
   }
   .unable{
     cursor: not-allowed;
     pointer-events: none;
+  }
+  p{
+    font-size: 30px;
+    color: white;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    3px 1px 0 black;
   }
   .titulo{
     font-size: 100px;
