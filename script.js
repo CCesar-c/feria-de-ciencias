@@ -14,9 +14,9 @@
     }, 1000);
     comenzar = true
   })
-  if(localStorage.getItem("tiempo") != null){
+  /*if(localStorage.getItem("tiempo") != null){
     alert(localStorage.getItem("tiempo"))
-  }
+  }*/
   document.addEventListener("click", () => {
     // ponerle color
     document.addEventListener('mousemove', function (e) {
